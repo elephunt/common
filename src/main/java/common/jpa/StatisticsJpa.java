@@ -20,10 +20,6 @@ public class StatisticsJpa {
     @Column(name = "Date")
     private Date date;
 
-    @ManyToOne
-    @JoinColumn(name = "PLAYER_ID")
-    private PlayerJpa playerJpa;
-
     @Column(name = "amount")
     private Long amount;
 
@@ -43,13 +39,6 @@ public class StatisticsJpa {
         this.date = date;
     }
 
-    public PlayerJpa getPlayerJpa() {
-        return playerJpa;
-    }
-
-    public void setPlayerJpa(PlayerJpa playerJpa) {
-        this.playerJpa = playerJpa;
-    }
 
     public Long getAmount() {
         return amount;
@@ -64,7 +53,6 @@ public class StatisticsJpa {
         return "StatisticsJpa{" +
                 "id=" + id +
                 ", date=" + date +
-                ", playerJpa=" + playerJpa +
                 ", amount=" + amount +
                 '}';
     }

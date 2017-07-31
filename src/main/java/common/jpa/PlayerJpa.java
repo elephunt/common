@@ -23,10 +23,6 @@ public class PlayerJpa {
     private String lastName;
 
 
-    @OneToMany(mappedBy = "player", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    Set<StatisticsJpa> summaries = new HashSet<>();
-
-
     public Long getId() {
         return id;
     }
@@ -51,21 +47,12 @@ public class PlayerJpa {
         this.lastName = lastName;
     }
 
-    public Set<StatisticsJpa> getSummaries() {
-        return summaries;
-    }
-
-    public void setSummaries(Set<StatisticsJpa> summaries) {
-        this.summaries = summaries;
-    }
-
     @Override
     public String toString() {
         return "PlayerJpa{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", summaries=" + summaries +
                 '}';
     }
 }
